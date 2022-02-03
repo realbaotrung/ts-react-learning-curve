@@ -11,5 +11,7 @@ const comment = {
 };
 
 export default function App(): ReactElement {
-  return <Comment date={comment.date} text={comment.text} user={comment.author} />;
+  return (
+    <Comment date={comment.date} text={comment.text} user={comment.author} />
+  );
 }
