@@ -14,5 +14,12 @@ export default function Greeting(props: IProps): ReactElement {
   // }
   // return <GuestGreeting />;
 
-  return <div>{isLoggedIn ? <UserGreeting /> : <GuestGreeting />}</div>;
+  // return <div>{isLoggedIn ? <UserGreeting /> : <GuestGreeting />}</div>;
+
+  return (
+    <div>
+      {isLoggedIn && <UserGreeting />}
+      {!isLoggedIn && <GuestGreeting />}
+    </div>
+  );
 }
