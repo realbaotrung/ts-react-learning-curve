@@ -20,6 +20,10 @@ export default function NumberList(props: IProps): ReactElement {
    * items may change.
    * This can negatively impact performance and may cause issues
    * with component state.
+   * ===========================================================
+   *
+   * A good rule of thumb is that elements
+   * inside the map() call need KEY
    */
   const listItems = numbers.map((number) => (
     <ListItem key={number.toString()} value={number} />
