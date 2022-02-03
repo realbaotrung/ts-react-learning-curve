@@ -8,8 +8,11 @@ interface IProps {
 
 export default function Greeting(props: IProps): ReactElement {
   const {isLoggedIn} = props;
-  if (isLoggedIn) {
-    return <UserGreeting />;
-  }
-  return <GuestGreeting />;
+
+  // if (isLoggedIn) {
+  //   return <UserGreeting />;
+  // }
+  // return <GuestGreeting />;
+
+  return <div>{isLoggedIn ? <UserGreeting /> : <GuestGreeting />}</div>;
 }

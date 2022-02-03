@@ -27,24 +27,44 @@ export default class LoginControl extends React.Component<IProps, IState> {
     }));
   };
 
+  // public render(): ReactElement {
+  //   const {isLoggedIn} = this.state;
+  //   let button;
+
+  //   switch (isLoggedIn) {
+  //     case true:
+  //       button = <LogoutButton onClick={this.handleLogoutClick} />;
+  //       break;
+  //     case false:
+  //       button = <LoginButton onClick={this.handleLoginClick} />;
+  //       break;
+  //     default:
+  //   }
+
+  //   return (
+  //     <div>
+  //       <Greeting isLoggedIn={isLoggedIn} />
+  //       {button}
+  //     </div>
+  //   );
+  // }
+
   public render(): ReactElement {
     const {isLoggedIn} = this.state;
-    let button;
-
-    switch (isLoggedIn) {
-      case true:
-        button = <LogoutButton onClick={this.handleLogoutClick} />;
-        break;
-      case false:
-        button = <LoginButton onClick={this.handleLoginClick} />;
-        break;
-      default:
-    }
 
     return (
       <div>
         <Greeting isLoggedIn={isLoggedIn} />
-        {button}
+        {/*
+        ===========================================
+        Inline If-Else with Conditional Operator
+        ===========================================
+        */}
+        {isLoggedIn ? (
+          <LogoutButton onClick={this.handleLogoutClick} />
+        ) : (
+          <LoginButton onClick={this.handleLoginClick} />
+        )}
       </div>
     );
   }
