@@ -1,10 +1,10 @@
 import {ReactElement} from 'react';
 
-interface IProps {
+type Props = {
   value: number;
-}
+};
 
-export default function ListItem(props: IProps): ReactElement {
+export default function ListItem(props: Props): ReactElement {
   const {value} = props;
   return <li>{value}</li>;
 }

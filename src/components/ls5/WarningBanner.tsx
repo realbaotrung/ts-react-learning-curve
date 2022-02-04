@@ -1,10 +1,10 @@
 import {ReactElement} from 'react';
 
-interface IProps {
+type Props = {
   warn: boolean;
-}
+};
 
-export default function WarningBanner(props: IProps): ReactElement | null {
+export default function WarningBanner(props: Props): ReactElement | null {
   const {warn} = props;
 
   if (!warn) {

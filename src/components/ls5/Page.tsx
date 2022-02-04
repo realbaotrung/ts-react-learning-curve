@@ -2,14 +2,14 @@ import React, {ReactElement} from 'react';
 import autoBindReact from 'auto-bind/react';
 import WarningBanner from './WarningBanner';
 
-interface IProps {}
-
-interface IState {
+// Represent an empty object
+type Props = Record<string, never>;
+type State = {
   showWarning: boolean;
-}
+};
 
-class Page extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
+class Page extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {showWarning: true};
     autoBindReact(this);

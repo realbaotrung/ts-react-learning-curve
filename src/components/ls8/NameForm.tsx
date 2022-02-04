@@ -1,28 +1,28 @@
 import React, {ReactElement} from 'react';
 
-interface IProps {
+type Props = {
   textHolder: string;
-}
-interface IState {
+};
+type State = {
   text: string;
-}
+};
 
-export default class NameForm extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
+export default class NameForm extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       text: '',
     };
   }
 
-  /** Typing on LEFT hand side of '=' */
+  /** Typing on LEFT-hand side of '=' */
   // handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
   //   this.setState({text: event.currentTarget.value });
   // }
 
   /** Apply types to the event handler itself */
-  /** Typing on RIGHT hand side of '=' */
-  handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
+  /** Typing on RIGHT-hand side of '=' */
+  handleInputChange = (event: React.FormEvent<HTMLInputElement>): void => {
     this.setState({text: event.currentTarget.value});
   };
 
@@ -43,7 +43,7 @@ export default class NameForm extends React.Component<IProps, IState> {
             type="text"
             id="name"
             value={text}
-            onChange={this.handleChange}
+            onChange={this.handleInputChange}
             placeholder={textHolder}
           />
         </label>

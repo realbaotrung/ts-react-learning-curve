@@ -4,14 +4,14 @@ import LoginButton from './button/LoginButton';
 import LogoutButton from './button/LogoutButton';
 import Greeting from './Greeting';
 
-interface IProps {}
-
-interface IState {
+// Represent an empty object
+type Props = Record<string, never>;
+type State = {
   isLoggedIn: boolean;
-}
+};
 
-export default class LoginControl extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
+export default class LoginControl extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {isLoggedIn: false};
     autoBindReact(this);

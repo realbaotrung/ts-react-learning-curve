@@ -1,20 +1,22 @@
 import React, {ReactElement} from 'react';
 
-interface IProps {}
-interface IState {
+// Represent an empty object
+type Props = Record<string, never>;
+type State = {
   text: string;
-}
+};
 
-export default class EssayForm extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
+export default class EssayForm extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       text: 'Your essay here...',
     };
   }
 
-  /** Typing on LEFT hand side of '=' */
-  handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
+  handleTextAreaChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ): void => {
     this.setState({text: event.currentTarget.value});
   };
 
@@ -37,7 +39,7 @@ export default class EssayForm extends React.Component<IProps, IState> {
             to implement a controlled component
             ================================================
             */}
-            <textarea value={text} onChange={this.handleChange} />
+            <textarea value={text} onChange={this.handleTextAreaChange} />
           </div>
         </label>
         <input type="submit" value="Submit" />

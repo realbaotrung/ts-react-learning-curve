@@ -1,10 +1,10 @@
 import {ReactElement} from 'react';
 
-interface IProps {
+type Props = {
   onClick: () => void;
-}
+};
 
-export default function LoginButton(props: IProps): ReactElement {
+export default function LoginButton(props: Props): ReactElement {
   const {onClick} = props;
   return (
     <button type="button" onClick={onClick}>

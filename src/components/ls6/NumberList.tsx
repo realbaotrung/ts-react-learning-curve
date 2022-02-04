@@ -1,11 +1,11 @@
 import {ReactElement} from 'react';
 import ListItem from './ListItem';
 
-interface IProps {
+type Props = {
   numbers: number[];
-}
+};
 
-export default function NumberList(props: IProps): ReactElement {
+export default function NumberList(props: Props): ReactElement {
   const {numbers} = props;
   /**
    * Keys help React identify which item have changed, are added,

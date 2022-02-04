@@ -2,11 +2,11 @@ import {ReactElement} from 'react';
 import GuestGreeting from './greeting/GuestGreeting';
 import UserGreeting from './greeting/UserGreeting';
 
-interface IProps {
+type Props = {
   isLoggedIn: boolean;
-}
+};
 
-export default function Greeting(props: IProps): ReactElement {
+export default function Greeting(props: Props): ReactElement {
   const {isLoggedIn} = props;
 
   // if (isLoggedIn) {

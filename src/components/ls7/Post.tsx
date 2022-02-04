@@ -1,12 +1,12 @@
 import {ReactElement} from 'react';
 
-interface IProps {
+type Props = {
   id: number;
   title: string;
   content: string;
-}
+};
 
-export default function Post(props: IProps): ReactElement {
+export default function Post(props: Props): ReactElement {
   const {id, title, content} = props;
 
   return (

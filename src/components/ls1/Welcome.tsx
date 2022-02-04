@@ -1,10 +1,10 @@
 import {ReactElement} from 'react';
 
-interface IProps {
+type Props = {
   name: string;
-}
+};
 
-export default function Welcome(props: IProps): ReactElement {
+export default function Welcome(props: Props): ReactElement {
   const {name} = props;
   return <h1>Hello, {name}</h1>;
 }

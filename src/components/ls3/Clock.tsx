@@ -2,16 +2,16 @@ import React, {ReactElement} from 'react';
 import autoBindReact from 'auto-bind/react';
 import {FormattedDate} from './FormattedDate';
 
-interface IProps {}
-
-interface IState {
+// Represent an empty object
+type Props = Record<string, never>;
+type State = {
   date: Date;
-}
+};
 
-class Clock extends React.Component<IProps, IState> {
+class Clock extends React.Component<Props, State> {
   private timerID!: NodeJS.Timer;
 
-  constructor(props: IProps) {
+  constructor(props: Props) {
     super(props);
     this.state = {date: new Date()};
     autoBindReact(this);

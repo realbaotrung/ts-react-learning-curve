@@ -1,17 +1,18 @@
 import React, {ReactElement} from 'react';
 
-interface IProps {}
-interface IState {
+// Represent an empty object
+type Props = Record<string, never>;
+type State = {
   value: string;
-}
+};
 
-export default class FlavorForm extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
+export default class FlavorForm extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {value: 'coconut'};
   }
 
-  handleChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
+  handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     this.setState({value: event.currentTarget.value});
   };
 
@@ -33,7 +34,7 @@ export default class FlavorForm extends React.Component<IProps, IState> {
           to implement a controlled component
           ================================================
           */}
-          <select value={value} onChange={this.handleChange}>
+          <select value={value} onChange={this.handleSelectChange}>
             <option value="lime">Lime</option>
             <option value="coconut">Coconut</option>
             <option value="mango">Mango</option>

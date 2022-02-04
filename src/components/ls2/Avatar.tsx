@@ -2,11 +2,11 @@ import {ReactElement} from 'react';
 import {IAuthor} from './shared/IAuthor';
 import {useFetchImage} from './shared/useFetchImage';
 
-interface IProps {
+type Props = {
   user: IAuthor;
-}
+};
 
-export default function Avatar(props: IProps): ReactElement | null {
+export default function Avatar(props: Props): ReactElement | null {
   const {user} = props;
   const imgURL = user.avatarUrl;
   const {hasLoaded, hasError} = useFetchImage(imgURL);

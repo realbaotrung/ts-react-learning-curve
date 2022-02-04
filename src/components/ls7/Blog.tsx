@@ -2,11 +2,11 @@ import {ReactElement} from 'react';
 import {IPost} from './IPost';
 import Post from './Post';
 
-interface IProps {
+type Props = {
   posts: IPost[];
-}
+};
 
-export default function Blog(props: IProps): ReactElement {
+export default function Blog(props: Props): ReactElement {
   const {posts} = props;
 
   const sidebar = (
