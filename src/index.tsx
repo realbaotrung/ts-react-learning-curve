@@ -6,7 +6,8 @@ import ReactDOM from 'react-dom';
 // import App from './components/ls4/App';
 // import App from './components/ls5/App';
 // import App from './components/ls6/App';
-import App from './components/ls7/App';
+// import App from './components/ls7/App';
+import App from './components/ls8/App';
 
 ReactDOM.render(
   <React.StrictMode>
