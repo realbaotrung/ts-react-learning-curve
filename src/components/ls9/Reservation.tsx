@@ -8,7 +8,7 @@ type State = {
 };
 
 export default class Reservation extends React.Component<Props, State> {
-  constructor(props: Props) {
+  constructor(public props: Props) {
     super(props);
     this.state = {
       isGoing: true,

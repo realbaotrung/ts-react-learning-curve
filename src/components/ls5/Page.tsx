@@ -9,7 +9,7 @@ type State = {
 };
 
 class Page extends React.Component<Props, State> {
-  constructor(props: Props) {
+  constructor(public props: Props) {
     super(props);
     this.state = {showWarning: true};
     autoBindReact(this);

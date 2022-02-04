@@ -11,7 +11,7 @@ type State = {
 class Clock extends React.Component<Props, State> {
   private timerID!: NodeJS.Timer;
 
-  constructor(props: Props) {
+  constructor(public props: Props) {
     super(props);
     this.state = {date: new Date()};
     autoBindReact(this);

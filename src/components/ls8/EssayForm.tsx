@@ -7,7 +7,7 @@ type State = {
 };
 
 export default class EssayForm extends React.Component<Props, State> {
-  constructor(props: Props) {
+  constructor(public props: Props) {
     super(props);
     this.state = {
       text: 'Your essay here...',
