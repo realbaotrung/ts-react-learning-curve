@@ -1,4 +1,5 @@
 import React, {ReactElement} from 'react';
+import autoBindReact from 'auto-bind/react';
 import LoginButton from './button/LoginButton';
 import LogoutButton from './button/LogoutButton';
 import Greeting from './Greeting';
@@ -13,19 +14,20 @@ export default class LoginControl extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {isLoggedIn: false};
+    autoBindReact(this);
   }
 
-  private handleLoginClick = (): void => {
+  private handleLoginClick(): void {
     this.setState(() => ({
       isLoggedIn: true,
     }));
-  };
+  }
 
-  private handleLogoutClick = (): void => {
+  private handleLogoutClick(): void {
     this.setState(() => ({
       isLoggedIn: false,
     }));
-  };
+  }
 
   // public render(): ReactElement {
   //   const {isLoggedIn} = this.state;

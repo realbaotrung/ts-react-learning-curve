@@ -1,4 +1,5 @@
 import React, {ReactElement} from 'react';
+import autoBindReact from 'auto-bind/react';
 import {FormattedDate} from './FormattedDate';
 
 interface IProps {}
@@ -13,6 +14,7 @@ class Clock extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {date: new Date()};
+    autoBindReact(this);
   }
 
   /**
@@ -45,11 +47,11 @@ class Clock extends React.Component<IProps, IState> {
     clearInterval(this.timerID);
   }
 
-  private tick = (): void => {
+  private tick(): void {
     this.setState(() => ({
       date: new Date(),
     }));
-  };
+  }
 
   public render(): ReactElement {
     const {date} = this.state;

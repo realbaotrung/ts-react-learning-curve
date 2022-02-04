@@ -1,4 +1,5 @@
 import React, {ReactElement} from 'react';
+import autoBindReact from 'auto-bind/react';
 import WarningBanner from './WarningBanner';
 
 interface IProps {}
@@ -11,13 +12,14 @@ class Page extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {showWarning: true};
+    autoBindReact(this);
   }
 
-  handleToggleClick = (): void => {
+  handleToggleClick(): void {
     this.setState((prevState) => ({
       showWarning: !prevState.showWarning,
     }));
-  };
+  }
 
   public render(): ReactElement {
     const {showWarning} = this.state;
