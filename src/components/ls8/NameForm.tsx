@@ -1,6 +1,8 @@
 import React, {ReactElement} from 'react';
 
-interface IProps {}
+interface IProps {
+  textHolder: string;
+}
 interface IState {
   text: string;
 }
@@ -32,6 +34,7 @@ export default class NameForm extends React.Component<IProps, IState> {
 
   render(): ReactElement {
     const {text} = this.state;
+    const {textHolder} = this.props;
     return (
       <form onSubmit={this.handleSubmit}>
         <label htmlFor="name">
@@ -41,6 +44,7 @@ export default class NameForm extends React.Component<IProps, IState> {
             id="name"
             value={text}
             onChange={this.handleChange}
+            placeholder={textHolder}
           />
         </label>
         <input type="submit" value="Submit" />
