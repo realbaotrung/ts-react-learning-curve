@@ -1,10 +1,8 @@
-import {ReactElement} from 'react';
-
 type Props = {
   celsius: number;
 };
 
-export default function BoilingVerdict(props: Props): ReactElement {
+export default function BoilingVerdict(props: Props): JSX.Element {
   const {celsius} = props;
   return (
     <div>

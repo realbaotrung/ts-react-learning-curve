@@ -1,4 +1,3 @@
-import {ReactElement} from 'react';
 import {IAuthor} from './shared/IAuthor';
 import UserInfo from './UserInfo';
 
@@ -12,7 +11,7 @@ function formatDate(date: Date): string {
   return date.toLocaleDateString();
 }
 
-export default function Comment(props: Props): ReactElement {
+export default function Comment(props: Props): JSX.Element {
   const {user, text, date} = props;
   return (
     <div className="Comment">

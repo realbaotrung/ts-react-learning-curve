@@ -1,6 +1,5 @@
-import {ReactElement} from 'react';
 import Reservation from './Reservation';
 
-export default function App(): ReactElement {
+export default function App(): JSX.Element {
   return <Reservation />;
 }

@@ -1,12 +1,10 @@
-import {ReactElement} from 'react';
-
 type Props = {
   id: number;
   title: string;
   content: string;
 };
 
-export default function Post(props: Props): ReactElement {
+export default function Post(props: Props): JSX.Element {
   const {id, title, content} = props;
 
   return (

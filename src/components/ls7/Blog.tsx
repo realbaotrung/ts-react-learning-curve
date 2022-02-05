@@ -1,4 +1,3 @@
-import {ReactElement} from 'react';
 import {IPost} from './IPost';
 import Post from './Post';
 
@@ -6,7 +5,7 @@ type Props = {
   posts: IPost[];
 };
 
-export default function Blog(props: Props): ReactElement {
+export default function Blog(props: Props): JSX.Element {
   const {posts} = props;
 
   const sidebar = (

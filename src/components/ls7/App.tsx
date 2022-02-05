@@ -1,4 +1,3 @@
-import {ReactElement} from 'react';
 import Blog from './Blog';
 
 const posts = [
@@ -14,6 +13,6 @@ const posts = [
   },
 ];
 
-export default function App(): ReactElement {
+export default function App(): JSX.Element {
   return <Blog posts={posts} />;
 }

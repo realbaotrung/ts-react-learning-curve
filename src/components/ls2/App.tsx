@@ -1,4 +1,3 @@
-import {ReactElement} from 'react';
 import Comment from './Comment';
 
 const comment = {
@@ -10,7 +9,7 @@ const comment = {
   },
 };
 
-export default function App(): ReactElement {
+export default function App(): JSX.Element {
   return (
     <Comment date={comment.date} text={comment.text} user={comment.author} />
   );

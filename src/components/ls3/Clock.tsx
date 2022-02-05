@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import autoBindReact from 'auto-bind/react';
 import {FormattedDate} from './FormattedDate';
 
@@ -53,7 +53,7 @@ class Clock extends React.Component<Props, State> {
     }));
   }
 
-  public render(): ReactElement {
+  public render(): JSX.Element {
     const {date} = this.state;
     return (
       <div>

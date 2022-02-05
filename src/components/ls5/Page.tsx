@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import autoBindReact from 'auto-bind/react';
 import WarningBanner from './WarningBanner';
 
@@ -21,7 +21,7 @@ class Page extends React.Component<Props, State> {
     }));
   }
 
-  public render(): ReactElement {
+  public render(): JSX.Element {
     const {showWarning} = this.state;
     return (
       <div>

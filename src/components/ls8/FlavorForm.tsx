@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 
 // Represent an empty object
 type Props = Record<string, never>;
@@ -22,7 +22,7 @@ export default class FlavorForm extends React.Component<Props, State> {
     alert(`Your favorite flavor is: ${value}`);
   };
 
-  render(): ReactElement {
+  render(): JSX.Element {
     const {value} = this.state;
     return (
       <form onSubmit={this.handleSubmit}>

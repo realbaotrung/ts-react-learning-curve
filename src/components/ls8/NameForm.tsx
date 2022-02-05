@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 
 type Props = {
   textHolder: string;
@@ -32,7 +32,7 @@ export default class NameForm extends React.Component<Props, State> {
     alert(`A name was submitted: ${text}`);
   };
 
-  render(): ReactElement {
+  render(): JSX.Element {
     const {text} = this.state;
     const {textHolder} = this.props;
     return (

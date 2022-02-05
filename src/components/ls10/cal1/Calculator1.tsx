@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import BoilingVerdict from './BoilingVerdict';
 
 type Props = Record<string, never>;
@@ -16,7 +16,7 @@ export default class Calculator1 extends React.Component<Props, State> {
     this.setState({temperature: event.currentTarget.value});
   };
 
-  render(): ReactElement {
+  render(): JSX.Element {
     const {temperature} = this.state;
     return (
       <fieldset>

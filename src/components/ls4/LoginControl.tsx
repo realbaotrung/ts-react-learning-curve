@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import autoBindReact from 'auto-bind/react';
 import LoginButton from './button/LoginButton';
 import LogoutButton from './button/LogoutButton';
@@ -29,7 +29,7 @@ export default class LoginControl extends React.Component<Props, State> {
     }));
   }
 
-  // public render(): ReactElement {
+  // public render(): JSX.Element {
   //   const {isLoggedIn} = this.state;
   //   let button;
 
@@ -51,7 +51,7 @@ export default class LoginControl extends React.Component<Props, State> {
   //   );
   // }
 
-  // public render(): ReactElement {
+  // public render(): JSX.Element {
   //   const {isLoggedIn} = this.state;
 
   //   return (
@@ -71,7 +71,7 @@ export default class LoginControl extends React.Component<Props, State> {
   //   );
   // }
 
-  public render(): ReactElement {
+  public render(): JSX.Element {
     const {isLoggedIn} = this.state;
 
     return (

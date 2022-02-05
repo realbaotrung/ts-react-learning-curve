@@ -1,6 +1,4 @@
-import {ReactElement} from 'react';
-
-export default function FileForm(): ReactElement {
+export default function FileForm(): JSX.Element {
   return (
     <div>
       {/*

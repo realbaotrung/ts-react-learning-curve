@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 
 // Represent an empty object
 type Props = Record<string, never>;
@@ -26,7 +26,7 @@ export default class EssayForm extends React.Component<Props, State> {
     alert(`A name was submitted: ${text}`);
   };
 
-  render(): ReactElement {
+  render(): JSX.Element {
     const {text} = this.state;
     return (
       <form onSubmit={this.handleSubmit}>

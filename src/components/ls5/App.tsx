@@ -1,6 +1,5 @@
-import {ReactElement} from 'react';
 import Page from './Page';
 
-export default function App(): ReactElement {
+export default function App(): JSX.Element {
   return <Page />;
 }

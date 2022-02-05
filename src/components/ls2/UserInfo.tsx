@@ -1,4 +1,3 @@
-import {ReactElement} from 'react';
 import Avatar from './Avatar';
 import {IAuthor} from './shared/IAuthor';
 
@@ -6,7 +5,7 @@ type Props = {
   user: IAuthor;
 };
 
-export default function UserInfo(props: Props): ReactElement {
+export default function UserInfo(props: Props): JSX.Element {
   const {user} = props;
   return (
     <div className="UserInfo">

@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 
 // Represent an empty object
 type Props = Record<string, never>;
@@ -39,7 +39,7 @@ export default class Reservation extends React.Component<Props, State> {
     }
   };
 
-  render(): ReactElement {
+  render(): JSX.Element {
     const {isGoing, numberOfGuests} = this.state;
     return (
       <form>

@@ -1,10 +1,8 @@
-import {ReactElement} from 'react';
-
 type Props = {
   warn: boolean;
 };
 
-export default function WarningBanner(props: Props): ReactElement | null {
+export default function WarningBanner(props: Props): JSX.Element | null {
   const {warn} = props;
 
   if (!warn) {

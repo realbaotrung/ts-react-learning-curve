@@ -1,5 +1,3 @@
-import {ReactElement} from 'react';
-
-export default function GuestGreeting(): ReactElement {
+export default function GuestGreeting(): JSX.Element {
   return <h1>Please sign up.</h1>;
 }

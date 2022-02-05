@@ -1,7 +1,6 @@
-import {ReactElement} from 'react';
 import Clock from './Clock';
 
-export default function App(): ReactElement {
+export default function App(): JSX.Element {
   return (
     <div>
       <Clock />

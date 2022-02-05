@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import TemperatureInput from './TemperatureInput';
 import {toCelsius, toFahrenheit, tryConvert} from '../shared/utils';
 import BoilingVerdict from '../cal1/BoilingVerdict';
@@ -31,7 +31,7 @@ export default class Calculator2 extends React.Component<Props, State> {
     this.setState({scale: 'f', temperature});
   };
 
-  render(): ReactElement {
+  render(): JSX.Element {
     const {scale, temperature} = this.state;
     const celsius =
       scale === 'f' ? tryConvert(temperature, toCelsius) : temperature;

@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 
 const scaleNames: Record<string, string> = {
   c: 'Celsius',
@@ -27,7 +27,7 @@ export default class TemperatureInput extends React.Component<Props, State> {
     onTemperatureChange(event.currentTarget.value);
   };
 
-  render(): ReactElement {
+  render(): JSX.Element {
     // const {temperature} = this.state;
     // const {scale} = this.props;
     const {temperature, scale} = this.props;
