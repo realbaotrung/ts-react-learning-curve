@@ -19,6 +19,7 @@ export default class FlavorForm extends React.Component<Props, State> {
   handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     const {value} = this.state;
+    // eslint-disable-next-line no-alert
     alert(`Your favorite flavor is: ${value}`);
   };
 
@@ -30,8 +31,8 @@ export default class FlavorForm extends React.Component<Props, State> {
           Pick your favorite flavor:
           {/*
           ================================================
-          <select> accepts a 'value' attribute that you can use
-          to implement a controlled component
+          <select> accepts a 'value' attribute that you
+          can use to implement a controlled component
           ================================================
           */}
           <select value={value} onChange={this.handleSelectChange}>

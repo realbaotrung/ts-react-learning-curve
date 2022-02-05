@@ -23,6 +23,7 @@ export default class EssayForm extends React.Component<Props, State> {
   handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     const {text} = this.state;
+    // eslint-disable-next-line no-alert
     alert(`A name was submitted: ${text}`);
   };
 

@@ -22,13 +22,14 @@ export default class NameForm extends React.Component<Props, State> {
 
   /** Apply types to the event handler itself */
   /** Typing on RIGHT-hand side of '=' */
-  handleInputChange = (event: React.FormEvent<HTMLInputElement>): void => {
+  handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     this.setState({text: event.currentTarget.value});
   };
 
   handleSubmit: React.FormEventHandler<HTMLFormElement> = (event): void => {
     event.preventDefault();
     const {text} = this.state;
+    // eslint-disable-next-line no-alert
     alert(`A name was submitted: ${text}`);
   };
 
