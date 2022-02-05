@@ -8,7 +8,9 @@ type State = Record<string, never>;
 
 // export default function FancyBorder(props: Props): JSX.Element {
 //   const {color, children} = props;
-//   return <div className={`FancyBorder FancyBorder-${color}`}>{children}</div>;
+//   return (
+// <div className={`FancyBorder FancyBorder-${color}`}>{children}</div>
+//  );
 // }
 
 export default class FancyBorder extends React.Component<Props, State> {
