@@ -1,16 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './components/ls1/App';
-// import App from './components/ls2/App';
-// import App from './components/ls3/App';
-// import App from './components/ls4/App';
-// import App from './components/ls5/App';
-// import App from './components/ls6/App';
-// import App from './components/ls7/App';
-// import App from './components/ls8/App';
-// import App from './components/ls9/App';
-// import App from './components/ls10/App';
-import App from './components/ls11/App';
+// ==========================================
+// Main-concept
+// ==========================================
+// import App from './main-concept/ls1/App';
+// import App from './main-concept/ls2/App';
+// import App from './main-concept/ls3/App';
+// import App from './main-concept/ls4/App';
+// import App from './main-concept/ls5/App';
+// import App from './main-concept/ls6/App';
+// import App from './main-concept/ls7/App';
+// import App from './main-concept/ls8/App';
+// import App from './main-concept/ls9/App';
+// import App from './main-concept/ls10/App';
+// import App from './main-concept/ls11/App';
+
+// ==========================================
+// React-Hook
+// ==========================================
+// import App from './react-hook/ls1/App'
+import App from './react-hook/ls2/App';
 
 ReactDOM.render(
   <React.StrictMode>
