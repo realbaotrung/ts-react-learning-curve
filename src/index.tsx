@@ -19,7 +19,8 @@ import ReactDOM from 'react-dom';
 // React-Hook
 // ==========================================
 // import App from './react-hook/ls1/App'
-import App from './react-hook/ls2/App';
+// import App from './react-hook/ls2/App';
+import App from './react-hook/ls3/App';
 
 ReactDOM.render(
   <React.StrictMode>
