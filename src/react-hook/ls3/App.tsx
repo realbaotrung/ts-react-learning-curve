@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 
 function ExampleWithManyState(): JSX.Element {
   // Declare multiple variables
