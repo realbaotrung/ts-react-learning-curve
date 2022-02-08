@@ -1,9 +1,24 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import FriendStatus from './FriendStatus';
 
 export default function App(): JSX.Element {
   const [isLogin, setIsLogin] = useState<boolean>(false);
   const [isUnMount, setIsUnMount] = useState<boolean>(false);
+
+  // ======================================
+  // Dom update side effect without cleanup
+  // ======================================
+  useEffect(() => {
+    if (isUnMount) {
+      setIsLogin(false);
+    }
+    /**
+     * React Hook useEffect contains a call to 'setIsLogin'.
+     * Without a list of dependencies, this can lead to an
+     * infinite chain of updates. To fix this, pass
+     * [isUnMount] as a second argument to the useEffect Hook
+     */
+  }, [isUnMount]);
 
   const handleClick = (): void => {
     if (!isUnMount) {
