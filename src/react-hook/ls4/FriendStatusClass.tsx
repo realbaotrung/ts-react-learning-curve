@@ -25,6 +25,25 @@ export default class FriendStatusClass extends React.Component<Props, State> {
     this.chatApi.subscribeToFriendStatus(friendId, this.handleStatusChange);
   }
 
+  componentDidUpdate(prevProps: Props): void {
+    /**
+     * Tip: Optimizing Performance by Skipping Effects
+     *
+     * In some cases, cleaning up or applying the effect
+     * after every render might create a performance problem.
+     * In class components, we can solve this by writing an extra comparison
+     *
+     * this equivalent === useEffect(() => {...}, [friendId])
+     */
+    const {friendId} = this.props;
+    if (prevProps.friendId !== friendId) {
+      // unsubscribe from previous
+      this.chatApi.unsubscribeFromFriendStatus();
+      // set the next
+      this.chatApi.subscribeToFriendStatus(friendId, this.handleStatusChange);
+    }
+  }
+
   componentWillUnmount(): void {
     this.chatApi.unsubscribeFromFriendStatus();
   }
@@ -40,11 +59,11 @@ export default class FriendStatusClass extends React.Component<Props, State> {
     const {isLogin} = this.props;
 
     if (isOnline === null) {
-      return <p>Loading...</p>;
+      return <p>Loading... (Friend Id = 0)</p>;
     }
     if (isOnline && isLogin) {
-      return <p>Online</p>;
+      return <p>Online FS Class</p>;
     }
-    return <p>Offline</p>;
+    return <p>Offline FS Class</p>;
   }
 }

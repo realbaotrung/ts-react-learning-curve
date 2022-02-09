@@ -1,14 +1,15 @@
 import {useEffect, useState} from 'react';
 import ChatAPI, {Status} from './ChatAPI';
 
+// setup Chat API here...
+const chatApi = new ChatAPI();
+
 type Props = {
   friendId: number;
   isLogin: boolean;
 };
 
-const chatApi = new ChatAPI();
-
-export default function FriendStatus(props: Props): JSX.Element {
+export default function FriendStatusFunc(props: Props): JSX.Element {
   const [isOnline, setIsOnline] = useState<boolean | null>(null);
   const {friendId, isLogin} = props;
 
@@ -26,6 +27,6 @@ export default function FriendStatus(props: Props): JSX.Element {
     };
   }, [friendId]);
 
-  if (isOnline === null) return <p>Loading...</p>;
-  return isOnline && isLogin ? <p>Online</p> : <p>Offline</p>;
+  if (isOnline === null) return <p>Loading... (Friend Id = 0)</p>;
+  return isOnline && isLogin ? <p>Online FS Func</p> : <p>Offline FS Func</p>;
 }

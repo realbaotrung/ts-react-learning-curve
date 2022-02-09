@@ -16,6 +16,10 @@ export default class ChatAPI {
   ): void => {
     console.log('from subscribe.');
     if (friendId) {
+      /**
+       * When app first render, Loading is display,
+       * after 2 second, "offline" or "online" is display.
+       */
       this.timeId = setTimeout(() => {
         this.status.isOnline = true;
         callback(this.status);
