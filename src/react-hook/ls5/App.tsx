@@ -1,44 +1,21 @@
 import {useEffect, useState} from 'react';
 import FriendStatusFunc from './FriendStatusFunc';
-import FriendStatusClass from './FriendStatusClass';
 import './style.scss';
 
 export default function App(): JSX.Element {
   const [isUnMount, setIsUnMount] = useState<boolean>(false);
   const [isLogin, setIsLogin] = useState<boolean>(false);
   const [count, setCount] = useState<number>(0);
-  // friend Id should equal 1, otherwise FriendStatus is Loading...
   const [friendId, setFriendId] = useState<number>(0);
-
-  // ======================================
-  // Dom update side effect without cleanup
-  // ======================================
 
   useEffect(() => {
     if (isUnMount) {
       setIsLogin(false);
       setFriendId(0);
-    }
-    /**
-     * React Hook useEffect contains a call to 'setIsLogin'.
-     * Without a list of dependencies, this can lead to an
-     * infinite chain of updates. To fix this, pass
-     * [isUnMount] as a second argument to the useEffect Hook
-     */
-  }, [isUnMount]);
-
-  useEffect(() => {
-    if (isUnMount) {
       setCount(0);
     }
     document.title = `You have click ${count} times`;
-    /**
-     * If you use this optimization, make sure the array
-     * includes all values from the component scope
-     * (such as props and state) that change over time and
-     * that are used by the effect.
-     */
-  }, [count, isUnMount]);
+  }, [isUnMount, count]);
 
   const handleLogin = (): void => {
     if (!isUnMount) {
@@ -63,9 +40,7 @@ export default function App(): JSX.Element {
   };
 
   const showStartBtn = (): JSX.Element | null => {
-    // Styling...
     const classBtn = 'start font-white';
-    // Hide or Show
     if (isUnMount) {
       return null;
     }
@@ -81,15 +56,12 @@ export default function App(): JSX.Element {
     return (
       <div>
         <FriendStatusFunc friendId={friendId} isLogin={isLogin} />
-        <FriendStatusClass friendId={friendId} isLogin={isLogin} />
       </div>
     );
   };
 
   return (
-    // use this <></> empty tag below when you don't
-    // want to create another div tag
-    <>
+    <div>
       {showFriendStatus()}
       <button type="button" onClick={handleLogin}>
         {isLogin && friendId ? 'Logout' : 'Login'}
@@ -101,6 +73,6 @@ export default function App(): JSX.Element {
         {isUnMount ? 'Add' : 'Delete'}
       </button>
       {showStartBtn()}
-    </>
+    </div>
   );
 }
