@@ -1,7 +1,15 @@
+/**
+ * This function converts Fahrenheit degree to Celsius degree
+ * @param fahrenheit
+ */
 export function toCelsius(fahrenheit: number): number {
   return ((fahrenheit - 32) * 5) / 9;
 }
 
+/**
+ * This function converts Celsius degree to Fahrenheit degree
+ * @param celsius
+ */
 export function toFahrenheit(celsius: number): number {
   return (celsius * 9) / 5 + 32;
 }

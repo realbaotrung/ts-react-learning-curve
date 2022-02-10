@@ -22,18 +22,10 @@ J
 src/react-hook/ls1/App.tsx,8\a\8a0649f88a34a593ea3aa6e3b43f2cb8dbc67d76
 J
 src/react-hook/ls2/App.tsx,9\6\969b04aacdde55338ed60a2c709fcdb542257a21
-S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
-=
-src/index.tsx,5\a\5ab44fe33ca96299f51ad4778a73e425b92bf439
 J
 src/react-hook/ls3/App.tsx,9\d\9de775cf80d07a623ead6fe1b7c758da9a43385a
 L
 src/main-concept/ls4/App.tsx,8\7\8716affe2c0c1077cdefee8f2f4429eb2f92c17d
-Q
-!src/main-concept/ls4/Greeting.tsx,9\8\98d0a91b9b9bfbc817ea5a823621c53f8dc5b9f1
-U
-%src/main-concept/ls4/LoginControl.tsx,1\b\1b110f0d56d726fd862b5f6faa2d7c0dea36d610
 M
 src/main-concept/ls5/Page.tsx,6\7\672aee14087cd75ed911052eb07e8358995e2909
 S
