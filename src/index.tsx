@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom';
 // Advanced-concept
 // ==========================================
 // import App from './advanced-concept/ls1/App';
-import App from './advanced-concept/ls2/App';
+// import App from './advanced-concept/ls2/App';
+import App from './advanced-concept/ls3/App';
 
 // ==========================================
 // Main-concept
