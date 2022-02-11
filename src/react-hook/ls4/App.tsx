@@ -64,13 +64,16 @@ export default function App(): JSX.Element {
 
   const showStartBtn = (): JSX.Element | null => {
     // Styling...
-    const classBtn = 'start font-white';
+    const classBtn = 'font-white';
     // Hide or Show
     if (isUnMount) {
       return null;
     }
     return (
-      <button type="button" onClick={handleFriendId} className={classBtn}>
+      <button
+        type="button"
+        onClick={handleFriendId}
+        className={`${classBtn} start`}>
         Start
       </button>
     );

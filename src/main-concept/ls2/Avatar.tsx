@@ -1,5 +1,5 @@
-import {IAuthor} from './shared/IAuthor';
-import {useFetchImage} from './shared/useFetchImage';
+import {IAuthor} from './IAuthor';
+import {useFetchImage} from '../../shared/utilities';
 
 type Props = {
   user: IAuthor;

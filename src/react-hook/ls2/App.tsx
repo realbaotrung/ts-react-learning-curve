@@ -10,7 +10,7 @@ export default function App(): JSX.Element {
   useEffect(() => {
     /** Update the document title using the browser API */
     document.title = `You clicked ${count} times`;
-  });
+  }, [count]);
 
   function handleClick(): void {
     setCount(count + 1);

@@ -14,10 +14,10 @@
  * It has a nice guide for bundle splitting with server-side rendering.
  */
 
-import React, {Suspense} from 'react';
+import {Suspense, lazy} from 'react';
 
-const AnotherComponent = React.lazy(() => import('./AnotherComponent'));
-const OtherComponent = React.lazy(() => import('./OtherComponent'));
+const AnotherComponent = lazy(() => import('./AnotherComponent'));
+const OtherComponent = lazy(() => import('./OtherComponent'));
 
 export default function App(): JSX.Element {
   /**

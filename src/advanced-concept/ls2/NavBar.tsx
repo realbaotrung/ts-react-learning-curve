@@ -1,14 +1,19 @@
 import {Link} from 'react-router-dom';
 
-type Props = {
-  routeNames: string[];
-  routeToLinkName: Record<string, string>;
+// ==========================
+// For Mapping links to pages
+// ==========================
+const routeNames = ['/', '/about', '/contact'];
+const routeToLinkName: Record<number, string> = {
+  0: 'Home',
+  1: 'About Us',
+  2: 'Contact Us',
 };
-export default function NavBar(props: Props): JSX.Element {
-  const {routeNames: links, routeToLinkName: linkToPage} = props;
-  const showNavLinks = links.map((link) => (
-    <li>
-      <Link to={link}>{linkToPage[link]}</Link>
+
+export default function NavBar(): JSX.Element {
+  const showNavLinks = routeNames.map((link) => (
+    <li key={link}>
+      <Link to={link}>{routeToLinkName[routeNames.indexOf(link)]}</Link>
     </li>
   ));
   return (

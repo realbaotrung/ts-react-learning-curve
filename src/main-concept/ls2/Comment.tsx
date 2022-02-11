@@ -1,4 +1,4 @@
-import {IAuthor} from './shared/IAuthor';
+import {IAuthor} from './IAuthor';
 import UserInfo from './UserInfo';
 
 type Props = {

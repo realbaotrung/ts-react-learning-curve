@@ -1,5 +1,5 @@
 import Avatar from './Avatar';
-import {IAuthor} from './shared/IAuthor';
+import {IAuthor} from './IAuthor';
 
 type Props = {
   user: IAuthor;

@@ -1,4 +1,16 @@
-import {useState, useEffect} from 'react';
+import {useEffect, useRef, useState} from 'react';
+
+/**
+ * Hook to count the number of renders
+ */
+export function useCountRender(): number {
+  const count = useRef<number>(0);
+  useEffect(() => {
+    count.current += 1;
+  }, []);
+  return count.current;
+}
+
 /**
  * Copyright (c) 2020 Eyk Rehbein
  *
@@ -20,19 +32,17 @@ import {useState, useEffect} from 'react';
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
-type Props = {
+type ReturnType = {
   hasLoaded: boolean;
   hasError: boolean;
   hasStartedInitialFetch: boolean;
 };
-
 /**
  * Loads the image into the cache or retrieves it from the cache
  * if it has already been loaded.
  * @param src
  */
-export const useFetchImage = (src: string): Props => {
+export const useFetchImage = (src: string): ReturnType => {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [hasStartedInitialFetch, setHasStartedInitialFetch] = useState(false);

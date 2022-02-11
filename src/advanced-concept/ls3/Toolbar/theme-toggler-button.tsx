@@ -12,7 +12,7 @@ type Props = {
 
 export default function ThemeTogglerButton(props: Props): JSX.Element {
   const {children} = props;
-  const themeContext = React.useContext<ThemeStyleCtxType>(ThemeStyleCtx);
+  const themeStyleCtx = React.useContext<ThemeStyleCtxType>(ThemeStyleCtx);
   const toggleCtx = React.useContext<ToggleThemeCtxType>(ToggleThemeCtx);
 
   return (
@@ -20,8 +20,8 @@ export default function ThemeTogglerButton(props: Props): JSX.Element {
       type="button"
       onClick={toggleCtx}
       style={{
-        backgroundColor: themeContext.background,
-        color: themeContext.foreground,
+        backgroundColor: themeStyleCtx.background,
+        color: themeStyleCtx.foreground,
       }}>
       {children}
     </button>

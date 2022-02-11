@@ -3,7 +3,12 @@ import LoginButton from '../components/button/LoginButton';
 import LogoutButton from '../components/button/LogoutButton';
 import Greeting from '../components/Greeting';
 
-function useHandlingLogin(): [boolean, () => void, () => void] {
+type ReturnType = {
+  isLoggedIn: boolean;
+  handleLoginClick: () => void;
+  handleLogoutClick: () => void;
+};
+function useHandlingLogin(): ReturnType {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const handleLoginClick = (): void => {
     setIsLoggedIn(true);
@@ -11,11 +16,11 @@ function useHandlingLogin(): [boolean, () => void, () => void] {
   const handleLogoutClick = (): void => {
     setIsLoggedIn(false);
   };
-  return [isLoggedIn, handleLoginClick, handleLogoutClick];
+  return {isLoggedIn, handleLoginClick, handleLogoutClick};
 }
 
 export default function LoginControl(): JSX.Element {
-  const [isLoggedIn, handleLoginClick, handleLogoutClick] = useHandlingLogin();
+  const {isLoggedIn, handleLoginClick, handleLogoutClick} = useHandlingLogin();
   return (
     <div>
       <Greeting isLoggedIn={isLoggedIn} />

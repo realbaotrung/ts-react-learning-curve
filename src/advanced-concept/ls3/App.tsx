@@ -3,7 +3,7 @@
  * without having to pass props down manually at every level.
  */
 
-import {useCallback, useEffect, useRef, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 import {
   ThemeStyleCtx,
   themes,
@@ -15,14 +15,7 @@ import Section from './Section';
 import Page from './Page';
 import Toolbar from './Toolbar/Toolbar';
 import ThemeTogglerButton from './Toolbar/theme-toggler-button';
-
-function useCountRender(): number {
-  const count = useRef<number>(0);
-  useEffect(() => {
-    count.current += 1;
-  }, []);
-  return count.current;
-}
+import {useCountRender} from '../../shared/utilities';
 
 export default function App(): JSX.Element {
   const countRenders = useCountRender();
@@ -40,10 +33,10 @@ export default function App(): JSX.Element {
     setThemeStyle(theme);
   }, [themeStyle]);
 
-  const handleChangeBodyBackground = (): void => {
+  const handleChangeBodyBackground = useCallback((): void => {
     // eslint-disable-next-line no-alert
     alert(`Body has change to ${themeStyle.background} color.`);
-  };
+  }, [themeStyle]);
 
   return (
     <Page>
