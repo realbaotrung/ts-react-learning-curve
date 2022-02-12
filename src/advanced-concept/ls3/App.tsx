@@ -46,7 +46,7 @@ export default function App(): JSX.Element {
       </ThemeStyleCtx.Provider>
       <Section>
         <ThemedButton onClick={handleChangeBodyBackground}>
-          Change Body Background
+          Show Info
         </ThemedButton>
       </Section>
       <Section>

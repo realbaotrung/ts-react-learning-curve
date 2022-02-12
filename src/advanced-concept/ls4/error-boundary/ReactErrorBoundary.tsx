@@ -35,7 +35,7 @@ function ErrorFallback(fallBackProps: FallbackProps): JSX.Element {
  * @param errorInfo
  */
 function myErrorHandle(error: Error, errorInfo: ErrorInfo): void {
-  console.warn('My error handle', error, errorInfo);
+  console.log('My error handle', error, errorInfo);
 }
 
 /**
@@ -48,7 +48,7 @@ function myErrorHandle(error: Error, errorInfo: ErrorInfo): void {
 export const testErrorUI = (
   <ErrorBoundary
     FallbackComponent={ErrorFallback}
-    onReset={() => {}}
+    onReset={() => undefined}
     onError={myErrorHandle}>
     <BuggyCounter />
   </ErrorBoundary>
@@ -69,7 +69,8 @@ export default function TestErrorUI(): JSX.Element {
 
   return (
     <div>
-      <button type="button" onClick={() => setExplore((e) => !e)}>
+      {/* <button type="button" onClick={() => setExplore((e) => !e)}> */}
+      <button type="button" onClick={() => setExplore(!explode)}>
         toggle explode
       </button>
       <ErrorBoundary
@@ -83,6 +84,5 @@ export default function TestErrorUI(): JSX.Element {
 }
 /*
 eslint
-  @typescript-eslint/no-empty-function: "off",
   no-console: "off",
 */
