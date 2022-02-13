@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useMemo, useState} from 'react';
-import './app.scss';
+import '../app.scss';
 
 /**
  * Using in demo of useMemo()

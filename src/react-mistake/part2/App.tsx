@@ -1,33 +1,32 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
+import '../app.scss';
 
 /**
- * Create a custom hook that return a ref to the Div element
- * that show (or hide) Tooltip timer whenever mouse over (or out)
+ * Create a custom hook that returns a ref to the Div element
+ * that shows (or hide) Tooltip timer whenever mouse over (or out)
  */
-function useDivShowTimer(
-  setTooltipShown: React.Dispatch<React.SetStateAction<boolean>>
-): React.RefObject<HTMLDivElement> {
+function useDivShowTimer(): {
+  divTooltipRef: React.RefObject<HTMLDivElement>;
+  tooltipShown: boolean;
+} {
+  const [tooltipShown, setTooltipShown] = useState<boolean>(false);
   const divTooltipRef = useRef<HTMLDivElement>(null);
 
   /**
    * Setup an event handler when mouse over (mouse out)
    */
-  const onMouseOver = useCallback(
-    () => setTooltipShown(true),
-    [setTooltipShown]
-  );
-  const onMouseOut = useCallback(
-    () => setTooltipShown(false),
-    [setTooltipShown]
-  );
+  const onMouseOver = useCallback(() => setTooltipShown(true), []);
+  const onMouseOut = useCallback(() => setTooltipShown(false), []);
 
   useEffect(() => {
     console.log('Add event listeners');
 
-    divTooltipRef.current?.addEventListener('mouseover', onMouseOver);
-    divTooltipRef.current?.addEventListener('mouseout', onMouseOut);
-
+    // Should assign ref of divTooltipRef inside useEffect()
     const ref = divTooltipRef.current;
+
+    ref?.addEventListener('mouseover', onMouseOver);
+    ref?.addEventListener('mouseout', onMouseOut);
+
     return () => {
       console.log('Remove event listeners');
       ref?.removeEventListener('mouseover', onMouseOver);
@@ -35,14 +34,14 @@ function useDivShowTimer(
     };
   }, [onMouseOut, onMouseOver]);
 
-  return divTooltipRef;
+  return {divTooltipRef, tooltipShown};
 }
 
 let timeID = 0;
 
 function Timer(): JSX.Element {
   const [count, setCount] = useState<number>(0);
-  const [tooltipShown, setTooltipShown] = useState<boolean>(false);
+  const {divTooltipRef, tooltipShown} = useDivShowTimer();
 
   useEffect(() => {
     timeID += 1;
@@ -53,11 +52,10 @@ function Timer(): JSX.Element {
       });
     }, 1000);
     return () => {
+      console.log('Clear timer!');
       clearInterval(timer);
     };
   }, []);
-
-  const divTooltipRef = useDivShowTimer(setTooltipShown);
 
   return (
     <>
@@ -70,8 +68,8 @@ function Timer(): JSX.Element {
 
 export default function App(): JSX.Element {
   /**
-   * We need to reset timer, whenever 'reset' button is click
-   * so we use 'key' that helps react check for changes
+   * We need to reset timer, whenever 'Update Index' button is click
+   * we also use 'key' that helps React check for changes
    * (add, remove, update) of Timer component
    * 
    Note:
