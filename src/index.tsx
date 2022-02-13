@@ -8,7 +8,6 @@ import ReactDOM from 'react-dom';
 // import App from './advanced-concept/ls3/App';
 // import App from './advanced-concept/ls4/App';
 // import App from './advanced-concept/ls5/App';
-import App from './react-mistake/part1/App';
 
 // ==========================================
 // Main-concept
@@ -48,6 +47,12 @@ import App from './react-mistake/part1/App';
 // import App from './react-hook/ls3/App';
 // import App from './react-hook/ls4/App';
 // import App from './react-hook/ls5/App';
+
+// ==========================================
+// React-mistakes
+// ==========================================
+// import App from './react-mistake/part1/App';
+import App from './react-mistake/part2/App';
 
 ReactDOM.render(
   <React.StrictMode>
