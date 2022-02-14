@@ -79,7 +79,7 @@ function MyComponent(): JSX.Element {
   //   ]);
   // }, []);
 
-  // second Version with array dependency
+  // second Version with array dependency as second argument
   const addOne = useCallback(() => {
     setNumbers([...numbers, numbers.length + 1]);
   }, [numbers]);

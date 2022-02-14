@@ -21,7 +21,11 @@ function useDivShowTimer(): {
   useEffect(() => {
     console.log('Add event listeners');
 
-    // Should assign ref of divTooltipRef inside useEffect()
+    /**
+     * Should making the assignment of divTooltipRef inside
+     * useEffect() lifecycle method, we need it updated dynamically
+     * each time a component is re-rendered.
+     */
     const ref = divTooltipRef.current;
 
     ref?.addEventListener('mouseover', onMouseOver);
@@ -37,17 +41,20 @@ function useDivShowTimer(): {
   return {divTooltipRef, tooltipShown};
 }
 
-let timeID = 0;
+/**
+ * TIME_ID at global state, help us tracking rendering times of Timer
+ */
+let TIME_ID = 0;
 
 function Timer(): JSX.Element {
   const [count, setCount] = useState<number>(0);
   const {divTooltipRef, tooltipShown} = useDivShowTimer();
 
   useEffect(() => {
-    timeID += 1;
+    TIME_ID += 1;
     const timer = setInterval(() => {
       setCount((currentCount) => {
-        console.log(`Timer ${timeID} starts ${currentCount}`);
+        console.log(`Timer ${TIME_ID} starts ${currentCount}`);
         return currentCount + 1;
       });
     }, 1000);
